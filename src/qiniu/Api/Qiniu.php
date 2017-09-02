@@ -1,12 +1,16 @@
 <?php
+namespace Qiniu\Api;
+
+use PhalApi\Api;
+
 /**
  * 七牛扩展 － CDN云端接口
  *
  * @author: dogstar 2015-03-17
  */
 
-class Api_Qiniu_CDN extends PhalApi_Api
-{
+class Qiniu extends Api {
+
     const CODE_MISS_UPLOAD_FILE = 1;
     const CODE_FAIL_TO_UPLOAD_FILE = 2;
     const CODE_FAIL_TO_UPDATE = 3;
@@ -24,18 +28,18 @@ class Api_Qiniu_CDN extends PhalApi_Api
     	
     	if (!isset($_FILES['file'])) {
             $rs['code'] = self::CODE_MISS_UPLOAD_FILE;
-            $rs['msg'] = T('miss upload file');
+            $rs['msg'] = \PhalApi\T('miss upload file');
     		return $rs;
     	}
     	
     	if ($_FILES["file"]["error"] > 0) {
             $rs['code'] = self::CODE_FAIL_TO_UPLOAD_FILE;
-            $rs['msg'] = T('failed to upload file with error: {error}', array('error' => $_FILES['file']['error']));
-    		DI()->logger->debug('failed to upload file with error: ' . $_FILES['file']['error']);
+            $rs['msg'] = \PhalApi\T('failed to upload file with error: {error}', array('error' => $_FILES['file']['error']));
+    		\PhalApi\DI()->logger->debug('failed to upload file with error: ' . $_FILES['file']['error']);
     		return $rs;
     	}
     	
-    	$url = DI()->qiniu->uploadFile($_FILES['file']['tmp_name']);
+    	$url = \PhalApi\DI()->qiniu->uploadFile($_FILES['file']['tmp_name']);
     	if (!empty($url)) {
     		$rs['code'] = 0;
             $rs['url'] = $url;

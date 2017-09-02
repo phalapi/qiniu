@@ -6,8 +6,8 @@ return array(
      */
     'Qiniu' =>  array(
         //统一的key
-        'accessKey' => '*****',
-        'secretKey' => '****',
+        'access_key' => '*****',
+        'secret_ey' => '****',
         //自定义配置的空间
         'space_bucket' => '自定义配置的空间',
         'space_host' => 'http://XXXXX.qiniudn.com',
