@@ -1,0 +1,148 @@
+[
+    {
+        "name": "qiniu/qiniu",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hfcorriez/php-qiniu.git",
+            "reference": "6b43b5020ec78b4cb68fb337ae8937c1679d5aef"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/hfcorriez/php-qiniu/6b43b5020ec78b4cb68fb337ae8937c1679d5aef.zip",
+            "reference": "6b43b5020ec78b4cb68fb337ae8937c1679d5aef",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "time": "2016-04-14T15:38:21+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Qiniu": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Corrie Zhao",
+                "email": "hfcorriez@gmail.com"
+            }
+        ],
+        "description": "Qiniu SDK",
+        "keywords": [
+            "api",
+            "cloud storage",
+            "qiniu",
+            "sdk"
+        ]
+    },
+    {
+        "name": "phalapi/notorm",
+        "version": "v2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phalapi/notorm.git",
+            "reference": "e1f984b30f6bec5a244f343db1a8fc060ae6291c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phalapi/notorm/e1f984b30f6bec5a244f343db1a8fc060ae6291c.zip",
+            "reference": "e1f984b30f6bec5a244f343db1a8fc060ae6291c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2017-08-05T09:01:43+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhalApi\\NotORM\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0+"
+        ],
+        "authors": [
+            {
+                "name": "Dogstar Huang",
+                "email": "chanzonghuang@gmail.com",
+                "homepage": "http://my.oschina.net/dogstar",
+                "role": "Developer"
+            }
+        ],
+        "description": "基于NotORM类库的优化版本，专门用于PhalApi 2.x 开源接口框架。",
+        "homepage": "http://www.phalapi.net",
+        "keywords": [
+            "api",
+            "notorm",
+            "phalapi"
+        ]
+    },
+    {
+        "name": "phalapi/kernal",
+        "version": "2.0.2",
+        "version_normalized": "2.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phalapi/kernal.git",
+            "reference": "a20218ee08993d6493c4aa9de3ba0b9e576804be"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/phalapi/kernal/a20218ee08993d6493c4aa9de3ba0b9e576804be.zip",
+            "reference": "a20218ee08993d6493c4aa9de3ba0b9e576804be",
+            "shasum": ""
+        },
+        "require": {
+            "phalapi/notorm": "2.0.1",
+            "php": ">=5.3.3"
+        },
+        "time": "2017-08-23T14:11:08+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/bootstrap.php",
+                "src/functions.php"
+            ],
+            "psr-4": {
+                "PhalApi\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0+"
+        ],
+        "authors": [
+            {
+                "name": "Dogstar Huang",
+                "email": "chanzonghuang@gmail.com",
+                "homepage": "http://my.oschina.net/dogstar",
+                "role": "Developer"
+            },
+            {
+                "name": "kwan",
+                "email": "303198069@qq.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PhalApi 2.0 框架核心部分。",
+        "homepage": "https://www.phalapi.net/",
+        "keywords": [
+            "api",
+            "framework",
+            "phalapi"
+        ]
+    }
+]
