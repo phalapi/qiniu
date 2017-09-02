@@ -17,9 +17,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "qiniu/qiniu": "*",
-        "phalapi/kernal": "2.0.*"
+        "qiniu/qiniu": "*"
     },
     "autoload": {
         "psr-4": {
