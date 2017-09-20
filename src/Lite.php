@@ -10,7 +10,7 @@ namespace PhalApi\Qiniu;
  * @author: dogstar 2015-03-17
  */
 
-class Qiniu_Lite {
+class Lite {
 
     protected $config;
 
@@ -56,7 +56,7 @@ class Qiniu_Lite {
         $fileName = date('YmdHis_', $_SERVER['REQUEST_TIME']) 
             . md5(\PhalApi\Tool::createRandStr(8) . microtime(true));
 
-        $res = $client->uploadFile($filePath, $fileName);
+        $res = $this->client->uploadFile($filePath, $fileName);
 
         if (!is_object($res) || empty($res->data) || empty($res->data['url'])) {
             \PhalApi\DI()->logger->debug('failed to upload file to qiniu', $res);
