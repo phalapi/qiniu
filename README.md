@@ -25,7 +25,7 @@ PhalApi 2.x扩展类库，基于Qiniu的七牛CDN扩展。
 并根据自己的情况修改填充。 
 
 ## 注册
-在./config/di.php文件中，注册：  
+在/path/to/phalapi/config/di.php文件中，注册：  
 ```php
 $di->qiniu = function() {
         return new \PhalApi\Qiniu\Lite();
