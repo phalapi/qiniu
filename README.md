@@ -8,7 +8,7 @@ PhalApi 2.x扩展类库，基于Qiniu的七牛CDN扩展。
 ```
 然后执行```composer update```。  
 
-安装成功后，添加以下配置到./config/app.php文件：  
+安装成功后，添加以下配置到/path/to/phalapi/config/app.php文件：  
 ```php
     /**
      * 七牛相关配置
