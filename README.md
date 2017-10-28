@@ -33,16 +33,16 @@ $di->qiniu = function() {
 ```
 
 ## 使用
-使用七牛上传本地文件：
+第一种使用方式：使用七牛上传本地文件：
 ```php
 $url = \PhalApi\DI()->qiniu->uploadFile($file);
 ```
 
-或者，直接使用已经提供的默认上传接口。在composer.json中追加配置：
+第二种使用方式：或者，直接使用已经提供的默认上传接口。在composer.json中追加配置：
 ```
 "autoload": {
     "psr-4": {
-        "PhalApi\\Qiniu": "vendor/phalapi/qiniu/src/qiniu"
+        "Qiniu\\": "vendor/phalapi/qiniu/src/qiniu"
     }
 }
 ```

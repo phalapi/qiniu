@@ -15,6 +15,23 @@ class Qiniu extends Api {
     const CODE_FAIL_TO_UPLOAD_FILE = 2;
     const CODE_FAIL_TO_UPDATE = 3;
 
+    public function getRules()
+    {
+        return array(
+            'uploadFile' => array(
+                    array(
+                    'name' => 'file',
+                    'type' => 'file',
+                    'min' => 0,
+                    'max' => 1024 * 1024,
+                    'range' => array('image/jpeg', 'image/png') ,
+                    'ext' => array('jpeg', 'png'),
+                    'desc' => '待上传的图片文件'
+                )
+            )
+        );
+    }
+
     /**
      * 上传文件到七牛CDN
      * @desc 只支持单个文件上传，需要使用字段file上传文件
@@ -24,7 +41,7 @@ class Qiniu extends Api {
      */
     public function uploadFile()
     {
-    	$rs = array('code' => self::CODE_FAIL_TO_UPLOAD_FILE, 'url' => '', 'msg' => T('fail to upload file'));
+    	$rs = array('code' => self::CODE_FAIL_TO_UPLOAD_FILE, 'url' => '', 'msg' => \PhalApi\T('fail to upload file'));
     	
     	if (!isset($_FILES['file'])) {
             $rs['code'] = self::CODE_MISS_UPLOAD_FILE;
