@@ -61,7 +61,7 @@ class Lite {
         if (!is_object($res) || empty($res->data) || empty($res->data['url'])) {
             \PhalApi\DI()->logger->debug('failed to upload file to qiniu', $res);
         } else {
-            $fileUrl = !isset($this->config['space_host'])
+            $fileUrl = empty($this->config['space_host'])
                 ? $res->data['url'] : rtrim($this->config['space_host'], '/') . '/' . $fileName;
             \PhalApi\DI()->logger->debug('succeed to upload file to qiniu', $res->data);
         }

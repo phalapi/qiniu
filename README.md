@@ -19,7 +19,7 @@ PhalApi 2.x扩展类库，基于Qiniu的七牛CDN扩展。
         'secret_key' => '****',
         //自定义配置的空间
         'space_bucket' => '自定义配置的空间',
-        'space_host' => 'http://XXXXX.qiniudn.com',
+        'space_host' => 'http://XXXXX.qiniudn.com', // 如果有配置此项，则优先使用此域名
     ),
 ```
 并根据自己的情况修改填充。 
