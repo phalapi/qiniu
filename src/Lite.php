@@ -45,7 +45,7 @@ class Lite {
      * @param string $filePath 待上传文件的绝对路径
      * @return string 上传成功后的URL，失败时返回空
      */
-    public function uploadFile($filePath)
+    public function uploadFile($filePath, $fileExt = '')
     {
         $fileUrl = '';
 
@@ -53,8 +53,9 @@ class Lite {
             return $fileUrl;
         }
 
+		$fileExt = !empty($fileExt) ? '.' . ltrim($fileExt, '.') : ''; // 支持扩展名
         $fileName = date('YmdHis_', $_SERVER['REQUEST_TIME']) 
-            . md5(\PhalApi\Tool::createRandStr(8) . microtime(true));
+            . md5(\PhalApi\Tool::createRandStr(8) . microtime(true)) . $fileExt;
 
         $res = $this->client->uploadFile($filePath, $fileName);
 
