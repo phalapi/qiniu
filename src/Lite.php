@@ -69,4 +69,9 @@ class Lite {
 
         return $fileUrl;
     }
+	
+    public function delete($key) {
+        $res = $this->client->delete($key);
+        return $res;
+    }
 }
