@@ -16,6 +16,8 @@ class Lite {
 
     protected $client;
 
+    protected $preffix;
+
     /**
      * @param string $config['accessKey']  统一的key
      * @param string $config['secretKey']
@@ -34,6 +36,10 @@ class Lite {
             'secret_key' => $this->config['secret_key'],
             'bucket'     => $this->config['space_bucket'],
         ));
+
+        if (!empty($config['preffix'])) {
+            $this->preffix = $config['preffix'];
+        }
     }
 
     public function getClient() {
@@ -53,8 +59,10 @@ class Lite {
             return $fileUrl;
         }
 
-		$fileExt = !empty($fileExt) ? '.' . ltrim($fileExt, '.') : ''; // 支持扩展名
-        $fileName = date('YmdHis_', $_SERVER['REQUEST_TIME']) 
+        $fileExt = !empty($fileExt) ? '.' . ltrim($fileExt, '.') : ''; // 支持扩展名
+
+        $fileName = $this->preffix
+            . date('YmdHis_', $_SERVER['REQUEST_TIME'])
             . md5(\PhalApi\Tool::createRandStr(8) . microtime(true)) . $fileExt;
 
         $res = $this->client->uploadFile($filePath, $fileName);
