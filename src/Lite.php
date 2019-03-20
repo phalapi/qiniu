@@ -31,11 +31,14 @@ class Lite {
             $this->config = \PhalApi\DI()->config->get('app.Qiniu');
         }
 
-        $this->client = \Qiniu\Qiniu::create(array(
+        // 动态追回更多配置
+        $cfg = array(
             'access_key' => $this->config['access_key'],
             'secret_key' => $this->config['secret_key'],
             'bucket'     => $this->config['space_bucket'],
-        ));
+        );
+        $cfg = array_merge($cfg, $this->config);
+        $this->client = \Qiniu\Qiniu::create($cfg);
 
         if (!empty($config['preffix'])) {
             $this->preffix = $config['preffix'];
