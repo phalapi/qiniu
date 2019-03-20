@@ -51,7 +51,7 @@ class Lite {
      * @param string $filePath 待上传文件的绝对路径
      * @return string 上传成功后的URL，失败时返回空
      */
-    public function uploadFile($filePath, $fileExt = '')
+    public function uploadFile($filePath, $fileExt = '', &$errMsg = '')
     {
         $fileUrl = '';
 
@@ -68,6 +68,7 @@ class Lite {
         $res = $this->client->uploadFile($filePath, $fileName);
 
         if (!is_object($res) || empty($res->data) || empty($res->data['url'])) {
+	    $errMsg = $res->error;
             \PhalApi\DI()->logger->debug('failed to upload file to qiniu', $res->error);
         } else {
             $fileUrl = empty($this->config['space_host'])
